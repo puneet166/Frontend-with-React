@@ -1,8 +1,14 @@
 .App {
   min-height:100vh;
-  background-color: #282c34;
-  color: white;
+  background-color: white;
+  color: black;
   padding:20px;
+
+}
+h1 { 
+  
+  
+  background-color: white;
 
 }
 .hrclass{

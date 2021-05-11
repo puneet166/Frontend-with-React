@@ -15,7 +15,7 @@ export default class APIService{
     }
     // for insert data
     static InsertData(body, token){
-        return fetch(`http://127.0.0.1:8000/detail`,{
+        return fetch('http://127.0.0.1:8000/detail',{
             'method':'POST', //PUT method for update
             headers:{
                 'Content-Type':'application/json', // content which type of content we will deal with

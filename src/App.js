@@ -62,21 +62,18 @@ function App() {
       }
       return true;
     })
+    
     setArticles(new_articles)
   }
 // Its child component method or instance which is form.js so will add this intoo form.js while calling
   const updatedInformation=(article)=>{
-    alert('puneet')
 
     const new_article =articles.map(myarticle =>{
-      alert('singh')
       if(myarticle.id === article.id)
       {
-        alert('punett')
         return article
       }
       else{
-        alert('sune')
         return myarticle;
       }
     })
@@ -99,28 +96,23 @@ function App() {
   //mapping the articles below in div
   <div className="App">
 
-      <div className ='row'>
-      <div className='col'>
-
-      <h1> Project</h1>
+      <div className="d-block bg-dark">
+      <h1 className="text-center" > REACT+DJANGO APPLICATION</h1>
       <br/>
-      </div>
-      <div classname='col'>
-        <button onClick={articleForm} className ="btn btn-primary"> Insert data</button>
       
+      <div className='d-grid gap-5 d-md-flex justify-content-md-end'>
+        <button onClick={articleForm} className ="btn btn-primary btn-lg"> Insert data</button>
+        <button onClick={logoutBtn} className ="btn btn-warning">Logout</button>
       </div>
-      <div classname='col'>
-        <button onClick={logoutBtn} className ="btn btn-primary">Logout</button>
-      
       </div>
 
-      </div>
+
         <br></br>
       <UserList articles={articles} editBtn={editBtn} deleteBtn={deleteBtn}/> 
       
       {editArticle ? // here put the condiition if editArticle not null call the form component other nahi.
       <Form article={editArticle} updatedInformation ={updatedInformation} insertInformation={insertInformation}/>:null } 
-    </div>
+</div>
   );
 
 }

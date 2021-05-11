@@ -22,17 +22,24 @@ function UserList(props){ // getting props arugumengt its read only property use
             {props.articles && props.articles.map(article =>{// here mapping the article
             return (
             // here showing the fetched data
-            <div>
-            
-                <h2>{article.Username}</h2>
-                <p>{article.email}</p>
-                <div className = "row">
-                <div className ="col-md-1">
-                <button className ="btn btn-primary" onClick={()=>editBtn(article)}>Update</button>
-                </div>
-                <div className ="col">
-                <button className ="btn btn-danger" onClick={()=>deleteBtn(article)}>Delete </button>
-                </div>
+            <div className="d-block bg-info">
+               
+               <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <p>{article.Username}</p>
+                   <    p> {article.email}</p>
+                    </blockquote>
+              
+               </figure>
+                            
+               
+                <div className = "d-grid gap-2 col-2 mx-auto">
+                
+                <button className ="btn btn-outline-primary" onClick={()=>editBtn(article)}>Update</button>
+    
+        
+                <button className ="btn btn-outline-danger" onClick={()=>deleteBtn(article)}>Delete </button>
+    
                 </div>
                 <hr className="hrclass"/>
             </div>

@@ -29,20 +29,22 @@ const updatedata=()=>{
     //NOTE-  make sure props.article.id,{Username,email}- in {} put your backend model column name because it will convert into json before send the data to the server.
     APIService.updatedata(props.article.id,{Username,email},token['mytoken'])// calling put API which were created in APIService file.
    // we need to send this responce to APP.js.
-    .then(
-        resp=>props.updatedInformation(resp))   //this function is notify our parent or APP.js about which article or user data has clicked or body of this function in APP.js parent component.
+    .then(resp=>props.updatedInformation(resp))   //this function is notify our parent or APP.js about which article or user data has clicked or body of this function in APP.js parent component.
+    .catch(error => console.log(error))
 
 }
 //for update button from update to insert data and when click on this button call Serivice API method and insert data into DB
 const insertdata =()=>{
     APIService.InsertData({Username,email},token['mytoken'])
     .then(resp=> props.insertInformation(resp))
+    .catch(error => console.log(error))
+
 }
 return(
         //e.target.value - capture the value of the input box and input.
         <div>
                 {props.article ?(
-                    <div className = "mb-3">
+                    <div className = "d-grid gap-2">
                         <input type="text" className="form-control" id="title" placeholder="Please enter Username"
                         value={Username} onChange ={e=>setTitle(e.target.value)} />
                             <br/>
