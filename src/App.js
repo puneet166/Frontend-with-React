@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
 import {useCookies} from 'react-cookie';// import cookies for user token jissai baar baar login na krna pdai.
-import {useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom'; // to change the routes 
 
 import UserList  from './components/UserList'//import component
 import {useState} from 'react' //for using useState react hooks. for getting my data

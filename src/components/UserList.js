@@ -7,6 +7,7 @@ function UserList(props){ // getting props arugumengt its read only property use
     //this function is notify our parent or APP.js about which article or user data has clicked.
     const editBtn =(article)=>{
         props.editBtn(article) // this is the method we are reciving from the APP.js as a prop
+    // so we are calling editbtn method of parents component from here . props.editBtn 
     }
     const deleteBtn =(article)=>{
         APIService.DeleteData(article.id,token['mytoken'])
